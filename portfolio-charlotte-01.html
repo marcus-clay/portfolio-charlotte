@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charlotte Rifflet | Chief Product Officer</title>
+    <meta name="description" content="Portfolio de Charlotte Rifflet. Stratégie produit, leadership humain et vision créative.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    },
+                    colors: {
+                        apple: {
+                            gray: '#F5F5F7',
+                            text: '#1D1D1F',
+                            secondary: '#86868B',
+                            border: '#D2D2D7',
+                            link: '#0066CC',
+                            dark: '#1D1D1F'
+                        }
+                    },
+                    letterSpacing: {
+                        tightest: '-0.02em',
+                        tighter: '-0.01em',
+                        normal: '0',
+                        wide: '0.01em',
+                        wider: '0.04em',
+                        widest: '0.08em',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            color: #1D1D1F;
+        }
+        
+        /* Typography Scale & Optimization */
+        h1, h2, h3, h4, h5, h6 {
+            letter-spacing: -0.015em;
+        }
+
+        .text-balance {
+            text-wrap: balance;
+        }
+
+        /* Smooth reveal animations */
+        .fade-in-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        
+        /* Lang Toggle Styles */
+        .lang-btn {
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+        .lang-btn.active {
+            color: #1D1D1F;
+            font-weight: 600;
+        }
+        .lang-btn:not(.active) {
+            color: #86868B;
+        }
+        .lang-btn:hover:not(.active) {
+            color: #555;
+        }
+        
+        /* Image Placeholder Shimmer */
+        .placeholder-shimmer {
+            background: #f6f7f8;
+            background-image: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+            background-repeat: no-repeat;
+            background-size: 800px 100%; 
+            animation-duration: 1s;
+            animation-fill-mode: forwards; 
+            animation-iteration-count: infinite;
+            animation-name: shimmer;
+            animation-timing-function: linear;
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: -468px 0; }
+            100% { background-position: 468px 0; } 
+        }
+    </style>
+</head>
+<body class="bg-white selection:bg-stone-200 selection:text-black">
+
+    <!-- Navigation (Glassmorphism) -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-xl border-b border-black/5 transition-all duration-300 supports-[backdrop-filter]:bg-white/60">
+        <div class="max-w-6xl mx-auto px-6 h-[52px] md:h-16 flex items-center justify-between">
+            <a href="#" class="text-[17px] font-semibold tracking-tight text-apple-dark">Charlotte Rifflet</a>
+            
+            <div class="flex items-center gap-8">
+                <div class="hidden md:flex space-x-8 text-[13px] font-medium text-apple-secondary tracking-wide">
+                    <a href="#about" class="hover:text-apple-dark transition-colors" data-i18n="nav.about">Ma vision</a>
+                    <a href="#portfolio" class="hover:text-apple-dark transition-colors" data-i18n="nav.portfolio">Projets</a>
+                    <a href="#experience" class="hover:text-apple-dark transition-colors" data-i18n="nav.experience">Parcours</a>
+                    <a href="#recommendations" class="hover:text-apple-dark transition-colors" data-i18n="nav.testimonials">Échos</a>
+                </div>
+
+                <div class="h-4 w-px bg-gray-300 hidden md:block"></div>
+
+                <!-- Language Toggle -->
+                <div class="flex items-center text-[12px] font-medium tracking-wide">
+                    <button class="lang-btn active" onclick="switchLanguage('fr')">FR</button>
+                    <span class="text-gray-300 mx-2">/</span>
+                    <button class="lang-btn" onclick="switchLanguage('en')">EN</button>
+                </div>
+
+                <a href="mailto:charlotterifflet@gmail.com" class="hidden md:block bg-apple-dark text-white px-4 py-1.5 rounded-full text-[12px] font-medium hover:bg-stone-800 transition-colors" data-i18n="nav.contact">
+                    Me contacter
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-32 pb-20 md:pt-48 md:pb-32 px-6 max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-center">
+            
+            <!-- Text Content -->
+            <div class="md:col-span-7 order-2 md:order-1">
+                <span class="inline-block text-[11px] font-bold uppercase tracking-widest text-apple-secondary mb-6 border-b border-gray-200 pb-2" data-i18n="hero.role">
+                    Directrice Produit
+                </span>
+                <h1 class="text-5xl md:text-7xl lg:text-[72px] font-semibold tracking-tight mb-8 leading-[0.98] text-apple-dark fade-in-up" data-i18n="hero.title">
+                    De la clarté dans<br>
+                    la complexité.
+                </h1>
+                <p class="text-xl md:text-[20px] font-normal text-apple-secondary max-w-xl leading-relaxed fade-in-up delay-100 text-balance" data-i18n="hero.subtitle">
+                    Curieuse et impliquée, j'aide les organisations à imaginer le monde autrement. J'apporte une vision stratégique et un leadership humain pour inventer, ensemble, notre futur.
+                </p>
+                
+                <div class="mt-10 flex gap-4 fade-in-up delay-200">
+                    <a href="https://www.linkedin.com/in/charlotterifflet/" target="_blank" class="inline-flex items-center gap-2 text-[15px] font-medium text-apple-dark hover:text-blue-600 transition-colors group">
+                        <span data-i18n="hero.linkedin">Profil LinkedIn</span>
+                        <i data-lucide="arrow-up-right" class="w-4 h-4 text-gray-400 group-hover:text-blue-600 transition-colors"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Photo Placeholder -->
+            <div class="md:col-span-5 order-1 md:order-2 fade-in-up delay-200">
+                <div class="relative aspect-[3/4] md:aspect-[4/5] w-full max-w-sm mx-auto md:ml-auto">
+                    <!-- This div is the placeholder. Replace src with real image later. -->
+                    <div class="absolute inset-0 bg-stone-100 rounded-2xl overflow-hidden border border-black/5 placeholder-shimmer group">
+                        <!-- Instructions for the user (visible only in placeholder mode) -->
+                        <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-6 text-stone-400">
+                            <i data-lucide="image" class="w-12 h-12 mb-4 opacity-50"></i>
+                            <span class="text-sm font-medium">Portrait Photo</span>
+                            <span class="text-xs mt-2 opacity-75">Format 3:4 or 4:5 recommended</span>
+                        </div>
+                        
+                        <!-- Example of how to add the image: 
+                        <img src="path/to/photo.jpg" alt="Charlotte Rifflet" class="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-500"> 
+                        -->
+                    </div>
+                    
+                    <!-- Decorative element behind -->
+                    <div class="absolute -z-10 top-6 -right-6 w-full h-full border border-stone-200 rounded-2xl hidden md:block"></div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Philosophy / Approach -->
+    <section id="about" class="py-24 px-6 bg-apple-gray">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+                <div class="md:col-span-4 sticky top-24">
+                    <h2 class="text-[11px] font-semibold uppercase tracking-widest text-apple-secondary mb-2" data-i18n="about.title">Mon Approche</h2>
+                    <div class="h-0.5 w-8 bg-stone-300"></div>
+                </div>
+                <div class="md:col-span-8">
+                    <p class="text-[28px] md:text-[32px] font-medium leading-snug mb-16 text-apple-dark text-balance" data-i18n="about.main">
+                        Je crois en un leadership qui donne du pouvoir aux équipes. Ma démarche est simple : comprendre les dynamiques humaines et les forces du marché pour bâtir des solutions justes.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-12">
+                        <div>
+                            <div class="flex items-center gap-2 mb-3">
+                                <i data-lucide="compass" class="w-5 h-5 text-stone-600"></i>
+                                <strong class="text-[17px] font-semibold text-apple-dark" data-i18n="about.item1.title">Naviguer la complexité</strong>
+                            </div>
+                            <p class="text-[15px] leading-relaxed text-apple-secondary" data-i18n="about.item1.desc">Apporter de la lumière là où c'est flou. Je m'attache à rendre les stratégies lisibles pour que chacun sache où l'on va.</p>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2 mb-3">
+                                <i data-lucide="heart-handshake" class="w-5 h-5 text-stone-600"></i>
+                                <strong class="text-[17px] font-semibold text-apple-dark" data-i18n="about.item2.title">Faire grandir les équipes</strong>
+                            </div>
+                            <p class="text-[15px] leading-relaxed text-apple-secondary" data-i18n="about.item2.desc">Un produit ne réussit que si l'équipe derrière est épanouie. Je crée un cadre où l'on peut oser et apprendre.</p>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2 mb-3">
+                                <i data-lucide="eye" class="w-5 h-5 text-stone-600"></i>
+                                <strong class="text-[17px] font-semibold text-apple-dark" data-i18n="about.item3.title">Réalisme & Intuition</strong>
+                            </div>
+                            <p class="text-[15px] leading-relaxed text-apple-secondary" data-i18n="about.item3.desc">Observer le terrain, sentir les signaux faibles. Pas de théorie hors-sol, mais une compréhension fine des utilisateurs.</p>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2 mb-3">
+                                <i data-lucide="sparkles" class="w-5 h-5 text-stone-600"></i>
+                                <strong class="text-[17px] font-semibold text-apple-dark" data-i18n="about.item4.title">Créativité collective</strong>
+                            </div>
+                            <p class="text-[15px] leading-relaxed text-apple-secondary" data-i18n="about.item4.desc">Imaginer le monde autrement ne se fait pas seul. C'est en étant créatifs ensemble que nous inventerons des futurs souhaitables.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-24 px-6 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex justify-between items-end mb-20 border-b border-gray-100 pb-6">
+                <h2 class="text-[11px] font-semibold uppercase tracking-widest text-apple-secondary" data-i18n="portfolio.title">Sélection de Projets</h2>
+                <span class="text-[11px] font-medium text-apple-secondary tracking-widest">2019 — 2025</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                
+                <!-- Project 1 -->
+                <article class="group">
+                    <div class="bg-stone-50 rounded-2xl p-10 h-full transition-all duration-300 hover:shadow-lg hover:shadow-black/5 border border-stone-100/50">
+                        <div class="flex flex-col h-full">
+                            <div class="mb-8">
+                                <span class="text-[11px] font-semibold uppercase tracking-wider text-blue-700 bg-blue-50 px-2 py-1 rounded" data-i18n="projects.p1.tag">Product Strategy</span>
+                                <h3 class="text-[24px] font-semibold mt-4 mb-1 text-apple-dark group-hover:text-blue-700 transition-colors" data-i18n="projects.p1.title">Écosystème EdTech</h3>
+                                <p class="text-[13px] font-medium text-apple-secondary">UNOWHY • 2024</p>
+                            </div>
+                            
+                            <div class="space-y-6 flex-grow">
+                                <div>
+                                    <h4 class="text-[13px] font-semibold text-apple-dark mb-1" data-i18n="common.challenge">Le défi</h4>
+                                    <p class="text-[15px] leading-relaxed text-stone-600" data-i18n="projects.p1.challenge">Unifier une suite de 6 produits fragmentés pour créer une expérience cohérente pour les utilisateurs.</p>
+                                </div>
+                                <div>
+                                    <h4 class="text-[13px] font-semibold text-apple-dark mb-1" data-i18n="common.impact">Mon impact</h4>
+                                    <p class="text-[15px] leading-relaxed text-stone-600" data-i18n="projects.p1.impact">J'ai aligné la vision produit avec les enjeux business, en pilotant 2 tribus et 7 squads pour une livraison fluide et sensée.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="group">
+                    <div class="bg-stone-50 rounded-2xl p-10 h-full transition-all duration-300 hover:shadow-lg hover:shadow-black/5 border border-stone-100/50">
+                        <div class="flex flex-col h-full">
+                            <div class="mb-8">
+                                <span class="text-[11px] font-semibold uppercase tracking-wider text-purple-700 bg-purple-50 px-2 py-1 rounded" data-i18n="projects.p2.tag">Service Design</span>
+                                <h3 class="text-[24px] font-semibold mt-4 mb-1 text-apple-dark group-hover:text-purple-700 transition-colors" data-i18n="projects.p2.title">Culture Design</h3>
+                                <p class="text-[13px] font-medium text-apple-secondary">UNOWHY • 2021-2023</p>
+                            </div>
+                            
+                            <div class="space-y-6 flex-grow">
+                                <div>
+                                    <h4 class="text-[13px] font-semibold text-apple-dark mb-1" data-i18n="common.challenge">Le défi</h4>
+                                    <p class="text-[15px] leading-relaxed text-stone-600" data-i18n="projects.p2.challenge">Introduire et structurer la pratique du Service Design au sein de la première licorne EdTech française.</p>
+                                </div>
+                                <div>
+                                    <h4 class="text-[13px] font-semibold text-apple-dark mb-1" data-i18n="common.impact">Mon impact</h4>
+                                    <p class="text-[15px] leading-relaxed text-stone-600" data-i18n="projects.p2.impact">Démocratisation de la recherche utilisateur. Création d'une communauté d'ambassadeurs pour ancrer le design dans l'ADN de l'entreprise.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="group">
+                    <div class="bg-stone-50 rounded-2xl p-10 h-full transition-all duration-300 hover:shadow-lg hover:shadow-black/5 border border-stone-100/50">
+                        <div class="flex flex-col h-full">
+                            <div class="mb-8">
+                                <span class="text-[11px] font-semibold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2 py-1 rounded" data-i18n="projects.p3.tag">Transformation</span>
+                                <h3 class="text-[24px] font-semibold mt-4 mb-1 text-apple-dark group-hover:text-emerald-700 transition-colors" data-i18n="projects.p3.title">Mobilité Globale</h3>
+                                <p class="text-[13px] font-medium text-apple-secondary">EY SEREN • 2019-2021</p>
+                            </div>
+                            
+                            <div class="space-y-6 flex-grow">
+                                <div>
+                                    <h4 class="text-[13px] font-semibold text-apple-dark mb-1" data-i18n="common.challenge">Le défi</h4>
+                                    <p class="text-[15px] leading-relaxed text-stone-600" data-i18n="projects.p3.challenge">Accélérer la transformation numérique pour garantir la couverture sociale des voyageurs d'affaires.</p>
+                                </div>
+                                <div>
+                                    <h4 class="text-[13px] font-semibold text-apple-dark mb-1" data-i18n="common.impact">Mon impact</h4>
+                                    <p class="text-[15px] leading-relaxed text-stone-600" data-i18n="projects.p3.impact">Une approche pragmatique pour concevoir les "services de demain", simple et rassurante pour l'utilisateur final.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 4 -->
+                <article class="group">
+                    <div class="bg-stone-50 rounded-2xl p-10 h-full transition-all duration-300 hover:shadow-lg hover:shadow-black/5 border border-stone-100/50">
+                        <div class="flex flex-col h-full">
+                            <div class="mb-8">
+                                <span class="text-[11px] font-semibold uppercase tracking-wider text-amber-700 bg-amber-50 px-2 py-1 rounded" data-i18n="projects.p4.tag">Innovation</span>
+                                <h3 class="text-[24px] font-semibold mt-4 mb-1 text-apple-dark group-hover:text-amber-700 transition-colors" data-i18n="projects.p4.title">Prospective</h3>
+                                <p class="text-[13px] font-medium text-apple-secondary">LOGIC DESIGN • 2017-2019</p>
+                            </div>
+                            
+                            <div class="space-y-6 flex-grow">
+                                <div>
+                                    <h4 class="text-[13px] font-semibold text-apple-dark mb-1" data-i18n="common.challenge">Le défi</h4>
+                                    <p class="text-[15px] leading-relaxed text-stone-600" data-i18n="projects.p4.challenge">Aider les grandes marques à anticiper les mutations de leur marché via l'approche "Innovation by Design".</p>
+                                </div>
+                                <div>
+                                    <h4 class="text-[13px] font-semibold text-apple-dark mb-1" data-i18n="common.impact">Mon impact</h4>
+                                    <p class="text-[15px] leading-relaxed text-stone-600" data-i18n="projects.p4.impact">Détection de signaux faibles et animation d'ateliers créatifs (Design Thinking) pour passer de l'idée à l'action.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section id="experience" class="py-24 px-6 border-t border-gray-100">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
+            <div class="md:col-span-4 sticky top-24 self-start">
+                <h2 class="text-[11px] font-semibold uppercase tracking-widest text-apple-secondary mb-2" data-i18n="experience.title">Parcours</h2>
+                <div class="h-0.5 w-8 bg-stone-300"></div>
+            </div>
+            <div class="md:col-span-8 space-y-16">
+                
+                <!-- Job -->
+                <div class="relative pl-8 md:pl-0 border-l md:border-l-0 border-gray-200">
+                    <div class="md:grid md:grid-cols-4 md:gap-8">
+                        <div class="md:col-span-1 mb-2 md:mb-0">
+                            <span class="text-[13px] font-medium text-apple-secondary block" data-i18n="jobs.j1.date">Mars 2024 — Présent</span>
+                            <span class="text-[12px] font-medium text-stone-400">Unowhy</span>
+                        </div>
+                        <div class="md:col-span-3">
+                            <h3 class="text-[19px] font-semibold text-apple-dark mb-2" data-i18n="jobs.j1.role">Chief Product Officer</h3>
+                            <p class="text-[15px] leading-relaxed text-stone-600" data-i18n="jobs.j1.desc">Membre du Comex. Je pilote la stratégie globale et la livraison de 6 produits, en veillant à l'alignement entre les enjeux tech et humains.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job -->
+                <div class="relative pl-8 md:pl-0 border-l md:border-l-0 border-gray-200">
+                    <div class="md:grid md:grid-cols-4 md:gap-8">
+                        <div class="md:col-span-1 mb-2 md:mb-0">
+                            <span class="text-[13px] font-medium text-apple-secondary block" data-i18n="jobs.j2.date">Jan 2023 — Mars 2024</span>
+                            <span class="text-[12px] font-medium text-stone-400">Unowhy</span>
+                        </div>
+                        <div class="md:col-span-3">
+                            <h3 class="text-[19px] font-semibold text-apple-dark mb-2" data-i18n="jobs.j2.role">Lead Product - Service Design & UXR</h3>
+                            <p class="text-[15px] leading-relaxed text-stone-600" data-i18n="jobs.j2.desc">Direction du pôle Design. J'ai œuvré pour diffuser une culture centrée utilisateur à tous les niveaux de l'entreprise.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job -->
+                <div class="relative pl-8 md:pl-0 border-l md:border-l-0 border-gray-200">
+                    <div class="md:grid md:grid-cols-4 md:gap-8">
+                        <div class="md:col-span-1 mb-2 md:mb-0">
+                            <span class="text-[13px] font-medium text-apple-secondary block" data-i18n="jobs.j3.date">Sep 2019 — Août 2021</span>
+                            <span class="text-[12px] font-medium text-stone-400">EY Seren</span>
+                        </div>
+                        <div class="md:col-span-3">
+                            <h3 class="text-[19px] font-semibold text-apple-dark mb-2" data-i18n="jobs.j3.role">Service Designer</h3>
+                            <p class="text-[15px] leading-relaxed text-stone-600" data-i18n="jobs.j3.desc">Accompagnement à la transformation digitale. Concevoir des services utiles et utilisables dans des environnements complexes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job -->
+                <div class="relative pl-8 md:pl-0 border-l md:border-l-0 border-gray-200">
+                    <div class="md:grid md:grid-cols-4 md:gap-8">
+                        <div class="md:col-span-1 mb-2 md:mb-0">
+                            <span class="text-[13px] font-medium text-apple-secondary block" data-i18n="jobs.j4.date">Juin 2017 — Sep 2019</span>
+                            <span class="text-[12px] font-medium text-stone-400">Logic Design Paris</span>
+                        </div>
+                        <div class="md:col-span-3">
+                            <h3 class="text-[19px] font-semibold text-apple-dark mb-2" data-i18n="jobs.j4.role">Innovation by Design Manager</h3>
+                            <p class="text-[15px] leading-relaxed text-stone-600" data-i18n="jobs.j4.desc">Anticiper le futur. Analyse des tendances et mise en place de processus d'innovation pour renouveler l'offre des marques.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Summary -->
+                <div class="mt-20 pt-12 border-t border-gray-100">
+                    <h4 class="text-[15px] font-semibold mb-8 text-apple-dark" data-i18n="education.title">Formation</h4>
+                    <ul class="space-y-6">
+                        <li class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline border-b border-gray-50 pb-4">
+                            <strong class="text-[15px] font-medium text-apple-dark">Strate, École de Design</strong>
+                            <span class="text-[14px] text-stone-500" data-i18n="education.s1">Master Innovation & Design (Félicitations du jury)</span>
+                        </li>
+                        <li class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline border-b border-gray-50 pb-4">
+                            <strong class="text-[15px] font-medium text-apple-dark">Hanken School of Economics</strong>
+                            <span class="text-[14px] text-stone-500" data-i18n="education.s2">Master 2, Marketing & Business Admin</span>
+                        </li>
+                        <li class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+                            <strong class="text-[15px] font-medium text-apple-dark">Grenoble École de Management</strong>
+                            <span class="text-[14px] text-stone-500" data-i18n="education.s3">DESMA - Marketing & Communication</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials / Recommendations -->
+    <section id="recommendations" class="py-24 px-6 bg-[#1D1D1F] text-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-[11px] font-semibold uppercase tracking-widest text-stone-400 mb-16" data-i18n="testimonials.title">Ce qu'ils en disent</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Quote 1 -->
+                <div class="space-y-6">
+                    <div class="h-px w-8 bg-stone-700 mb-4"></div>
+                    <p class="text-[17px] leading-relaxed text-stone-300 font-light italic" data-i18n="testimonials.q1.text">
+                        "Sa vision stratégique fait la différence. Elle sait aligner besoins terrain, contraintes opérationnelles et roadmap produit, tout en fédérant les équipes autour d'objectifs clairs."
+                    </p>
+                    <div>
+                        <p class="text-[14px] font-semibold text-white">Souchiam Sechao</p>
+                        <p class="text-[12px] text-stone-500">CEO @ Weytop</p>
+                    </div>
+                </div>
+
+                <!-- Quote 2 -->
+                <div class="space-y-6">
+                    <div class="h-px w-8 bg-stone-700 mb-4"></div>
+                    <p class="text-[17px] leading-relaxed text-stone-300 font-light italic" data-i18n="testimonials.q2.text">
+                        "L'un des meilleurs profils que j'ai rencontrés. Elle combine grandes qualités humaines et enthousiasme fort pour l'innovation. Une véritable fusée en termes de delivery."
+                    </p>
+                    <div>
+                        <p class="text-[14px] font-semibold text-white">William Anger</p>
+                        <p class="text-[12px] text-stone-500">Manager @ Unowhy</p>
+                    </div>
+                </div>
+
+                <!-- Quote 3 -->
+                <div class="space-y-6">
+                    <div class="h-px w-8 bg-stone-700 mb-4"></div>
+                    <p class="text-[17px] leading-relaxed text-stone-300 font-light italic" data-i18n="testimonials.q3.text">
+                        "Charlotte a une vraie capacité à transformer la complexité en stratégie claire. Exigeante sur la communication, elle sait écouter, décider, et embarquer les équipes avec énergie."
+                    </p>
+                    <div>
+                        <p class="text-[14px] font-semibold text-white">Victor Soussan</p>
+                        <p class="text-[12px] text-stone-500">Principal Designer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 bg-white border-t border-gray-100">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center text-[12px] text-stone-500 font-medium">
+            <p data-i18n="footer.copyright">&copy; 2025 Charlotte Rifflet. Tous droits réservés.</p>
+            <div class="flex space-x-8 mt-4 md:mt-0 items-center">
+                <a href="https://www.linkedin.com/in/charlotterifflet/" target="_blank" class="hover:text-black transition-colors">LinkedIn</a>
+                <a href="mailto:charlotterifflet@gmail.com" class="hover:text-black transition-colors">charlotterifflet@gmail.com</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Content Translations
+        const i18n = {
+            fr: {
+                nav: {
+                    about: "Ma vision",
+                    portfolio: "Projets",
+                    experience: "Parcours",
+                    testimonials: "Échos",
+                    contact: "Me contacter"
+                },
+                hero: {
+                    role: "Directrice Produit",
+                    title: "De la clarté dans<br>la complexité.",
+                    subtitle: "Curieuse et impliquée, j'aide les organisations à imaginer le monde autrement. J'apporte une vision stratégique et un leadership humain pour inventer, ensemble, notre futur.",
+                    linkedin: "Profil LinkedIn"
+                },
+                about: {
+                    title: "Mon Approche",
+                    main: "Je crois en un leadership qui donne du pouvoir aux équipes. Ma démarche est simple : comprendre les dynamiques humaines et les forces du marché pour bâtir des solutions justes.",
+                    item1: { title: "Naviguer la complexité", desc: "Apporter de la lumière là où c'est flou. Je m'attache à rendre les stratégies lisibles pour que chacun sache où l'on va." },
+                    item2: { title: "Faire grandir les équipes", desc: "Un produit ne réussit que si l'équipe derrière est épanouie. Je crée un cadre où l'on peut oser et apprendre." },
+                    item3: { title: "Réalisme & Intuition", desc: "Observer le terrain, sentir les signaux faibles. Pas de théorie hors-sol, mais une compréhension fine des utilisateurs." },
+                    item4: { title: "Créativité collective", desc: "Imaginer le monde autrement ne se fait pas seul. C'est en étant créatifs ensemble que nous inventerons des futurs souhaitables." }
+                },
+                portfolio: {
+                    title: "Sélection de Projets"
+                },
+                common: {
+                    challenge: "Le défi",
+                    impact: "Mon impact"
+                },
+                projects: {
+                    p1: { tag: "Product Strategy", title: "Écosystème EdTech", challenge: "Unifier une suite de 6 produits fragmentés pour créer une expérience cohérente pour les utilisateurs.", impact: "J'ai aligné la vision produit avec les enjeux business, en pilotant 2 tribus et 7 squads pour une livraison fluide et sensée." },
+                    p2: { tag: "Service Design", title: "Culture Design", challenge: "Introduire et structurer la pratique du Service Design au sein de la première licorne EdTech française.", impact: "Démocratisation de la recherche utilisateur. Création d'une communauté d'ambassadeurs pour ancrer le design dans l'ADN de l'entreprise." },
+                    p3: { tag: "Transformation", title: "Mobilité Globale", challenge: "Accélérer la transformation numérique pour garantir la couverture sociale des voyageurs d'affaires.", impact: "Une approche pragmatique pour concevoir les 'services de demain', simple et rassurante pour l'utilisateur final." },
+                    p4: { tag: "Innovation", title: "Prospective", challenge: "Aider les grandes marques à anticiper les mutations de leur marché via l'approche 'Innovation by Design'.", impact: "Détection de signaux faibles et animation d'ateliers créatifs (Design Thinking) pour passer de l'idée à l'action." }
+                },
+                experience: {
+                    title: "Parcours"
+                },
+                jobs: {
+                    j1: { date: "Mars 2024 — Présent", role: "Chief Product Officer", desc: "Membre du Comex. Je pilote la stratégie globale et la livraison de 6 produits, en veillant à l'alignement entre les enjeux tech et humains." },
+                    j2: { date: "Jan 2023 — Mars 2024", role: "Lead Product - Service Design & UXR", desc: "Direction du pôle Design. J'ai œuvré pour diffuser une culture centrée utilisateur à tous les niveaux de l'entreprise." },
+                    j3: { date: "Sep 2019 — Août 2021", role: "Service Designer", desc: "Accompagnement à la transformation digitale. Concevoir des services utiles et utilisables dans des environnements complexes." },
+                    j4: { date: "Juin 2017 — Sep 2019", role: "Innovation by Design Manager", desc: "Anticiper le futur. Analyse des tendances et mise en place de processus d'innovation pour renouveler l'offre des marques." }
+                },
+                education: {
+                    title: "Formation",
+                    s1: "Master Innovation & Design (Félicitations du jury)",
+                    s2: "Master 2, Marketing & Business Admin",
+                    s3: "DESMA - Marketing & Communication"
+                },
+                testimonials: {
+                    title: "Ce qu'ils en disent",
+                    q1: { text: "\"Sa vision stratégique fait la différence. Elle sait aligner besoins terrain, contraintes opérationnelles et roadmap produit, tout en fédérant les équipes autour d'objectifs clairs.\"" },
+                    q2: { text: "\"L'un des meilleurs profils que j'ai rencontrés. Elle combine grandes qualités humaines et enthousiasme fort pour l'innovation. Une véritable fusée en termes de delivery.\"" },
+                    q3: { text: "\"Charlotte a une vraie capacité à transformer la complexité en stratégie claire. Exigeante sur la communication, elle sait écouter, décider, et embarquer les équipes avec énergie.\"" }
+                },
+                footer: {
+                    copyright: "&copy; 2025 Charlotte Rifflet. Tous droits réservés."
+                }
+            },
+            en: {
+                nav: {
+                    about: "My Vision",
+                    portfolio: "Projects",
+                    experience: "Experience",
+                    testimonials: "Echoes",
+                    contact: "Contact Me"
+                },
+                hero: {
+                    role: "Chief Product Officer",
+                    title: "Clarity within<br>complexity.",
+                    subtitle: "Curious and committed, I help organizations reimagine the world. I bring strategic vision and human leadership to invent our future, together.",
+                    linkedin: "LinkedIn Profile"
+                },
+                about: {
+                    title: "My Approach",
+                    main: "I believe in leadership that empowers teams. My approach is simple: understanding human dynamics and market forces to build just solutions.",
+                    item1: { title: "Navigating complexity", desc: "Shedding light where it's blurry. I strive to make strategies readable so everyone knows where we're going." },
+                    item2: { title: "Growing teams", desc: "A product only succeeds if the team behind it thrives. I create a framework where people can dare and learn." },
+                    item3: { title: "Realism & Intuition", desc: "Observing the field, sensing weak signals. No groundless theory, but a fine understanding of users." },
+                    item4: { title: "Collective creativity", desc: "Reimagining the world isn't a solo act. It is by being creative together that we will invent desirable futures." }
+                },
+                portfolio: {
+                    title: "Selected Projects"
+                },
+                common: {
+                    challenge: "The Challenge",
+                    impact: "My Impact"
+                },
+                projects: {
+                    p1: { tag: "Product Strategy", title: "EdTech Ecosystem", challenge: "Unifying a fragmented suite of 6 products to create a coherent experience for users.", impact: "I aligned product vision with business goals, steering 2 tribes and 7 squads for seamless and meaningful delivery." },
+                    p2: { tag: "Service Design", title: "Design Culture", challenge: "Introducing and structuring the Service Design practice within the first French EdTech unicorn.", impact: "Democratizing user research. Creating an ambassador community to anchor design in the company's DNA." },
+                    p3: { tag: "Transformation", title: "Global Mobility", challenge: "Accelerating digital transformation to ensure social coverage for business travelers.", impact: "A pragmatic approach to designing 'tomorrow's services,' simple and reassuring for the end user." },
+                    p4: { tag: "Innovation", title: "Prospective", challenge: "Helping global brands anticipate market shifts via the 'Innovation by Design' approach.", impact: "Weak signal detection and creative workshop facilitation (Design Thinking) to move from idea to action." }
+                },
+                experience: {
+                    title: "Experience"
+                },
+                jobs: {
+                    j1: { date: "Mar 2024 — Present", role: "Chief Product Officer", desc: "ExCom Member. I steer global strategy and the delivery of 6 products, ensuring alignment between tech stakes and human needs." },
+                    j2: { date: "Jan 2023 — Mar 2024", role: "Lead Product - Service Design & UXR", desc: "Design Department Lead. I worked to diffuse a user-centric culture at every level of the organization." },
+                    j3: { date: "Sep 2019 — Aug 2021", role: "Service Designer", desc: "Digital Transformation Consulting. Designing useful and usable services in complex environments." },
+                    j4: { date: "Jun 2017 — Sep 2019", role: "Innovation by Design Manager", desc: "Anticipating the future. Trend analysis and implementing innovation processes to renew brand offerings." }
+                },
+                education: {
+                    title: "Education",
+                    s1: "Master Innovation & Design (Jury Honors)",
+                    s2: "Master 2, Marketing & Business Admin",
+                    s3: "DESMA - Marketing & Communication"
+                },
+                testimonials: {
+                    title: "What They Say",
+                    q1: { text: "\"Her strategic vision makes the difference. She knows how to align field needs, operational constraints, and product roadmaps, while rallying teams around clear goals.\"" },
+                    q2: { text: "\"One of the best profiles I've met. She combines great human qualities with strong enthusiasm for innovation. A true rocket in terms of delivery.\"" },
+                    q3: { text: "\"Charlotte has a true capacity to transform complexity into clear strategy. Demanding on communication, she knows how to listen, decide, and embark teams with energy.\"" }
+                },
+                footer: {
+                    copyright: "&copy; 2025 Charlotte Rifflet. All rights reserved."
+                }
+            }
+        };
+
+        function switchLanguage(lang) {
+            // Update Text
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                const keys = key.split('.');
+                let value = i18n[lang];
+                
+                // Traverse object to find text
+                keys.forEach(k => {
+                    if (value) value = value[k];
+                });
+
+                if (value) el.innerHTML = value;
+            });
+
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+
+            // Update Buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                if(btn.innerText.toLowerCase() === lang) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
+
+        // Smooth reveal on scroll with Intersection Observer
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    observer.unobserve(entry.target); 
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div, footer > div, article').forEach(el => {
+            el.classList.add('transition-all', 'duration-[800ms]', 'ease-[cubic-bezier(0.25,1,0.5,1)]', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+        
+        lucide.createIcons();
+    </script>
+</body>
+</html>
